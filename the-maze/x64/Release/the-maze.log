@@ -1,0 +1,26 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: Le répertoire intermédiaire (x64\Release\) contient des fichiers partagés provenant d'un autre projet (labyrinthe.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
+  main.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+  Grid.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(48): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(63): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(74): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Génération de code en cours
+  57 of 58 functions (98.3%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Release\the-maze.exe

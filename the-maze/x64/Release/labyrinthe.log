@@ -1,0 +1,24 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: Le répertoire intermédiaire (x64\Release\) contient des fichiers partagés provenant d'un autre projet (labyrinthe.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
+  main.cpp
+c:\users\joach\desktop\labyrinthe\labyrinthe\labyrinthe\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+  Grid.cpp
+c:\users\joach\desktop\labyrinthe\labyrinthe\labyrinthe\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\labyrinthe\labyrinthe\labyrinthe\src\grid.cpp(48): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\labyrinthe\labyrinthe\labyrinthe\src\grid.cpp(63): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\labyrinthe\labyrinthe\labyrinthe\src\grid.cpp(74): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Génération de code en cours
+  All 58 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  labyrinthe.vcxproj -> C:\Users\joach\Desktop\labyrinthe\labyrinthe\x64\Release\the-maze.exe

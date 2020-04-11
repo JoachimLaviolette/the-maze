@@ -1,0 +1,21 @@
+﻿  main.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+  Grid.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(48): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(63): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(74): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Génération de code en cours...
+sfml-graphics-s-d.lib(RenderStates.cpp.obj) : fatal error LNK1112: type d'ordinateur module 'x64' en conflit avec le type d'ordinateur cible 'x86'
