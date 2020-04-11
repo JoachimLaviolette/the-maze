@@ -18,11 +18,11 @@ void setCellAt(Grid* grid, int x, int y, int value) {
 }
 
 int getWallAt(int isHorizontal, Grid grid, int x, int y) {
-	return *((isHorizontal ? grid.h_walls : grid.v_walls) + x * grid.lines + y);
+	return *((isHorizontal ? grid.h_walls : grid.v_walls) + x * (isHorizontal ? grid.lines + 1 : grid.lines) + y);
 }
 
 void destroyWallAt(int isHorizontal, Grid* grid, int x, int y) {
-	*((isHorizontal ? grid->h_walls : grid->v_walls) + x * grid->lines + y) = 0;
+	*((isHorizontal ? grid->h_walls : grid->v_walls) + x * (isHorizontal ? grid->lines + 1 : grid->lines) + y) = 0;
 }
 
 int isCellVisited(Grid grid, int x, int y) {
@@ -70,7 +70,7 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	for (int x = 0; x < grid.columns + 1; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
 			RectangleShape wall(Vector2f(WALL_SIZE, CELL_SIZE));
-			wall.setFillColor(isWallDestroyed(1, grid, x, y) ? Color::Black : Color::White);
+			wall.setFillColor(isWallDestroyed(0, grid, x, y) ? Color::Black : Color::White);
 			wall.setPosition(Vector2f(x * CELL_SIZE, y * CELL_SIZE));
 
 			window->draw(wall);

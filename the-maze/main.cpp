@@ -5,8 +5,8 @@
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 6;
-	const int lines = 6;
+	const int columns = 9;
+	const int lines = 2;
 
 	int cells[columns][lines];
 	int h_walls[columns][lines + 1];
@@ -20,8 +20,7 @@ int main() {
 	grid.v_walls = (int *)v_walls;
 	
 	initializeGrid(&grid);
-	setCellAt(&grid, 2, 1, 1);
-	DEBUG_displayGrid(grid);
+	destroyWallAt(0, &grid, 1, 1);
 
 	while (window.isOpen())
 	{
