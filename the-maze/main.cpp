@@ -1,31 +1,30 @@
 #include "include/Constants.h"
-#include "include/Grid.h"
+#include "include/Maze.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 9;
-	const int lines = 2;
+	const int columns = 10;
+	const int lines = 8;
 
-	int cells[columns][lines];
+	Cell cells[columns][lines];
 	int h_walls[columns][lines + 1];
 	int v_walls[columns + 1][lines];
 
 	Grid grid;
 	grid.columns = columns;
 	grid.lines = lines;
-	grid.cells = (int *)cells;
+	grid.cells = (Cell *)cells;
 	grid.h_walls = (int *)h_walls;
 	grid.v_walls = (int *)v_walls;
-	
-	initializeGrid(&grid);
-	destroyWallAt(0, &grid, 1, 1);
+
+	createMaze(&grid);
 
 	while (window.isOpen())
 	{
 		window.clear(sf::Color(59,59,59));
-		drawGrid(&window, grid);
+		drawMaze(&window, grid);
 		window.display();
 	}
 
