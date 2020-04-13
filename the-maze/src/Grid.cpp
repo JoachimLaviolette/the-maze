@@ -16,10 +16,8 @@ void initializeCellAt(Grid grid, int x, int y) {
 	(*(grid.cells + x * grid.lines + y)).x = x;
 	(*(grid.cells + x * grid.lines + y)).y = y;
 	(*(grid.cells + x * grid.lines + y)).value = 0;
-	Cell defaultCell;
-	defaultCell.x = -1;
-	defaultCell.y = -1;
-	(*(grid.cells + x * grid.lines + y)).formerCell = &defaultCell;
+	(*(grid.formerCells + x * grid.lines + y)).x = -1;
+	(*(grid.formerCells + x * grid.lines + y)).y = -1;
 }
 
 Cell getCellAt(Grid grid, int x, int y) {
@@ -30,9 +28,12 @@ void setCellValue(Grid grid, Cell cell, int value) {
 	(*(grid.cells + cell.x * grid.lines + cell.y)).value = value;
 }
 
+Cell* getCellFormerCell(Grid grid, Cell* cell) {
+	return grid.formerCells + cell->x * grid.lines + cell->y;
+}
+
 void setCellFormerCell(Grid grid, Cell* cell, Cell formerCell) {
-	(*(grid.cells + cell->x * grid.lines + cell->y)).formerCell->x = (&getCellAt(grid, formerCell.x, formerCell.y))->x;
-	(*(grid.cells + cell->x * grid.lines + cell->y)).formerCell->y = (&getCellAt(grid, formerCell.x, formerCell.y))->y;
+	*(grid.formerCells + cell->x * grid.lines + cell->y) = getCellAt(grid, formerCell.x, formerCell.y);
 }
 
 int getWallAt(int isHorizontal, Grid grid, int x, int y) {

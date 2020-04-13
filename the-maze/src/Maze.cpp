@@ -20,14 +20,9 @@ void buildMaze(Grid* grid) {
 		neighborCell.x = -1;
 		neighborCell.y = -1; 
 
-		currentCell = getCellAt(*grid, currentCell.x, currentCell.y);
-
 		// First, mark the current cell as visited
 		setCellValue(*grid, currentCell, 1);
 
-		printf("\nCurrent cell [%d][%d]\n", currentCell.x, currentCell.y);
-		printf("Former cell [%d][%d]\n", currentCell.formerCell->x, currentCell.formerCell->y);
-		
 		// Then, try to get a neighbor cell
 		while ((neighborCell.x == -1 && neighborCell.y == -1) && !isAllDirectionsTested(testedDir)) {
 			// Compute a random direction between 0 and 3 (see Constants.h)
@@ -38,15 +33,11 @@ void buildMaze(Grid* grid) {
 
 			// Try to get the neighbor cell in the direction
 			tryGetNeighborCell(*grid, currentCell, neighborCell, randDir);
-			printf("Neighbor cell [%d][%d]\n", neighborCell.x, neighborCell.y);
 		}
 		
 		// If no visitable neighbor cell found, go back to the former cell
 		if (neighborCell.x == -1 && neighborCell.y == -1) {
-			printf("Rollbacking\n");
-			printf("Trying to rollback to cell at [%d][%d]...\n", currentCell.formerCell->x, currentCell.formerCell->y);
-			currentCell = *currentCell.formerCell;
-			printf("Rollbacked\n");
+			currentCell = *getCellFormerCell(*grid, &currentCell);
 		}
 		else {
 			// Destroy the wall between the current cell and the neighbor cell found 
@@ -58,10 +49,7 @@ void buildMaze(Grid* grid) {
 			// And set the new current cell
 			setCellFormerCell(*grid, &neighborCell, currentCell);
 			currentCell = neighborCell;
-			// printf("(%d, %d)\n", currentCell.formerCell->x, currentCell.formerCell->y);
-			// printf("New neighbor cell 444 former cell [%d][%d]\n", currentCellFormerCell.x, currentCellFormerCell.y);
 		}
-		printf("NEXT\n");
 	} while (!isAllCellsVisited(grid));
 }
 

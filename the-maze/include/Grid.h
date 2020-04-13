@@ -8,13 +8,13 @@ typedef struct Cell {
 	int x;
 	int y;
 	int value;
-	Cell* formerCell;
 };
 
 typedef struct Grid {
 	int columns;
 	int lines;
 	Cell* cells;
+	Cell* formerCells;
 	int *h_walls;
 	int *v_walls;
 };
@@ -24,6 +24,7 @@ void initializeGrid(Grid*);
 void initializeCellAt(Grid, int, int);
 Cell getCellAt(Grid, int, int);
 void setCellValue(Grid, Cell, int); 
+Cell* getCellFormerCell(Grid, Cell*);
 void setCellFormerCell(Grid, Cell*, Cell);
 int getWallAt(int, Grid, int, int);
 void destroyWallAt(int, Grid*, int, int);
