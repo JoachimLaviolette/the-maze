@@ -1,29 +1,8 @@
 ﻿  main.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(21): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-  Grid.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(21): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(64): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(81): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(94): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-  Maze.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(21): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
   Génération de code en cours
-  5 of 69 functions ( 7.2%) were compiled, the rest were copied from previous compilation.
+  1 of 72 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code

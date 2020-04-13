@@ -5,8 +5,8 @@
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 10;
-	const int lines = 8;
+	const int columns = 5;
+	const int lines = 5;
 
 	Cell cells[columns][lines];
 	int h_walls[columns][lines + 1];

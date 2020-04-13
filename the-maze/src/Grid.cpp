@@ -16,8 +16,10 @@ void initializeCellAt(Grid grid, int x, int y) {
 	(*(grid.cells + x * grid.lines + y)).x = x;
 	(*(grid.cells + x * grid.lines + y)).y = y;
 	(*(grid.cells + x * grid.lines + y)).value = 0;
-	(*(grid.cells + x * grid.lines + y)).formerCell_x = -1;
-	(*(grid.cells + x * grid.lines + y)).formerCell_y = -1;
+	Cell defaultCell;
+	defaultCell.x = -1;
+	defaultCell.y = -1;
+	(*(grid.cells + x * grid.lines + y)).formerCell = &defaultCell;
 }
 
 Cell getCellAt(Grid grid, int x, int y) {
@@ -28,9 +30,9 @@ void setCellValue(Grid grid, Cell cell, int value) {
 	(*(grid.cells + cell.x * grid.lines + cell.y)).value = value;
 }
 
-void setCellFormerCell(Grid grid, Cell cell, Cell formerCell) {
-	(*(grid.cells + cell.x * grid.lines + cell.y)).formerCell_x = formerCell.x;
-	(*(grid.cells + cell.x * grid.lines + cell.y)).formerCell_y = formerCell.y;
+void setCellFormerCell(Grid grid, Cell* cell, Cell formerCell) {
+	(*(grid.cells + cell->x * grid.lines + cell->y)).formerCell->x = (&getCellAt(grid, formerCell.x, formerCell.y))->x;
+	(*(grid.cells + cell->x * grid.lines + cell->y)).formerCell->y = (&getCellAt(grid, formerCell.x, formerCell.y))->y;
 }
 
 int getWallAt(int isHorizontal, Grid grid, int x, int y) {
@@ -60,7 +62,7 @@ void drawGridCells(sf::RenderWindow* window, Grid grid) {
 	for (int x = 0; x < grid.columns; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
 			RectangleShape cell(Vector2f(CELL_SIZE, CELL_SIZE));
-			cell.setFillColor(/*isCellVisited(grid, x, y) ? Color::Red : */Color::Black);
+			cell.setFillColor(isCellVisited(grid, x, y) ? Color::Yellow : Color::Red);
 			cell.setPosition(Vector2f(x * CELL_SIZE, y * CELL_SIZE));
 			window->draw(cell);
 		}
@@ -73,8 +75,8 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw vertical walls
 	for (int x = 0; x < grid.columns + 1; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
-			sf::Color wallColor = x == 0 || y == grid.columns ? sf::Color::White 
-				: isWallDestroyed(0, grid, x, y) ? Color::Black : Color::White;
+			sf::Color wallColor = x == 0 || y == grid.columns ? sf::Color::Red
+				: isWallDestroyed(0, grid, x, y) ? Color::Yellow : Color::Red;
 
 			RectangleShape wall(Vector2f(WALL_SIZE, CELL_SIZE));
 			wall.setFillColor(wallColor);
@@ -86,8 +88,8 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw horizontal walls
 	for (int x = 0; x < grid.columns; ++x) {
 		for (int y = 0; y < grid.lines + 1; ++y) {
-			sf::Color wallColor = y == 0 || y == grid.lines ? sf::Color::White
-			: isWallDestroyed(1, grid, x, y) ? Color::Black : Color::White;
+			sf::Color wallColor = y == 0 || y == grid.lines ? sf::Color::Red
+			: isWallDestroyed(1, grid, x, y) ? Color::Yellow : Color::Red;
 
 			RectangleShape wall(Vector2f(CELL_SIZE, WALL_SIZE));
 			wall.setFillColor(wallColor);
@@ -105,7 +107,7 @@ int isAllCellsVisited(Grid* grid) {
 	return 1;
 }
 
-void tryGetNeighborCell(Grid grid, Cell currentCell, Cell* neighborCell, int dir) {
+void tryGetNeighborCell(Grid grid, Cell currentCell, Cell& neighborCell, int dir) {
 	// First, handle special cases
 	if (dir == UP && currentCell.y == 0) return;
 	if (dir == DOWN && currentCell.y == grid.lines - 1) return;
@@ -113,15 +115,19 @@ void tryGetNeighborCell(Grid grid, Cell currentCell, Cell* neighborCell, int dir
 	if (dir == RIGHT && currentCell.x == grid.columns - 1) return;
 
 	// Now, handle normal cases
-	neighborCell->x = currentCell.x;
-	neighborCell->y = currentCell.y;
+	int xOut = currentCell.x;
+	int yOut = currentCell.y;
 
-	if (dir == UP) --neighborCell->y;
-	else if (dir == DOWN) ++neighborCell->y;
-	else if (dir == LEFT) --neighborCell->x;
-	else ++neighborCell->x;
+	if (dir == UP) --yOut;
+	else if (dir == DOWN) ++yOut;
+	else if (dir == LEFT) --xOut;
+	else ++xOut;
 
-	neighborCell = &getCellAt(grid, neighborCell->x, neighborCell->y);
+	if (!isCellVisited(grid, xOut, yOut)) neighborCell = getCellAt(grid, xOut, yOut);
+}
+
+int isCellEquals(Cell c0, Cell c1) {
+	return c0.x == c1.x && c0.y == c1.y;
 }
 
 void DEBUG_displayGrid(Grid grid) {
