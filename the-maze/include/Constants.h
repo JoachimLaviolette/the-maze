@@ -13,6 +13,7 @@ const int UP = 0;
 const int RIGHT = 1;
 const int DOWN = 2;
 const int LEFT = 3;
+const int NONE = -1;
 
 // --- Grid
 const int CELL_SIZE = 50;

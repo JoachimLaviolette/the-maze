@@ -76,7 +76,7 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw vertical walls
 	for (int x = 0; x < grid.columns + 1; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
-			sf::Color wallColor = x == 0 || y == grid.columns ? sf::Color::Red
+			sf::Color wallColor = x == 0 || x == grid.columns ? sf::Color::Red
 				: isWallDestroyed(0, grid, x, y) ? Color::Yellow : Color::Red;
 
 			RectangleShape wall(Vector2f(WALL_SIZE, CELL_SIZE));

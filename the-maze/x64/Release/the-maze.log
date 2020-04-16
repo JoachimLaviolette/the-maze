@@ -1,7 +1,4 @@
-﻿  main.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-  Grid.cpp
+﻿  Grid.cpp
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(67): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
@@ -19,12 +16,13 @@ c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(97): warning C424
           [
               T=float
           ]
-  Maze.cpp
+  Player.cpp
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\player.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Player' quand aucune variable n'est déclarée
   Génération de code en cours
-  15 of 73 functions (20.5%) were compiled, the rest were copied from previous compilation.
+  8 of 77 functions (10.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Release\the-maze.exe

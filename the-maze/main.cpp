@@ -1,11 +1,12 @@
 #include "include/Constants.h"
 #include "include/Maze.h"
+#include "include/Player.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 20;
+	const int columns = 10;
 	const int lines = 10;
 
 	Cell cells[columns][lines];
@@ -21,12 +22,19 @@ int main() {
 	grid.h_walls = (int *)h_walls;
 	grid.v_walls = (int *)v_walls;
 
+	Player player;
+	player.id = 0;
+	player.x = 0;
+	player.y = 0;
+
 	createMaze(&grid);
 
 	while (window.isOpen())
 	{
 		window.clear(sf::Color(59,59,59));
 		drawMaze(&window, grid);
+		handlePlayerInputs(grid, &player);
+		drawPlayer(&window, player);
 		window.display();
 	}
 
