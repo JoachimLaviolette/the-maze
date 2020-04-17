@@ -136,3 +136,16 @@ void DEBUG_displayGrid(Grid grid) {
 		for (int y = 0; y < grid.lines; ++y)
 			std::cout << "Grid [" << x << "][" << y << "]: " << getCellAt(grid, x, y).value << std::endl;
 }
+
+void DEBUG_displayWalls(Grid grid) {
+	printf("::::::::::::: HORIZONTAL WALLS :::::::::::::\n");
+	for (int x = 0; x < grid.columns; ++x)
+		for (int y = 0; y < grid.lines + 1; ++y)
+			std::cout << "Wall [" << x << "][" << y << "]: " << getWallAt(1, grid, x, y) << std::endl;
+
+	printf("::::::::::::: VERTICAL WALLS :::::::::::::\n");
+	for (int x = 0; x < grid.columns + 1; ++x)
+		for (int y = 0; y < grid.lines; ++y)
+			std::cout << "Wall [" << x << "][" << y << "]: " << getWallAt(0, grid, x, y) << std::endl;
+
+}

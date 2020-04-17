@@ -15,5 +15,6 @@ typedef struct Player {
 void movePlayer(Grid, Player*, int);
 void drawPlayer(sf::RenderWindow*, Player);
 void handlePlayerInputs(Grid, Player*);
+int isMoveKeyPressed();
 
 #endif PLAYER_H

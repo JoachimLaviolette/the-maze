@@ -1,6 +1,8 @@
 #include "../include/Constants.h"
 #include "../include/Player.h"
 
+int isKeyPressed = 0;
+
 void movePlayer(Grid grid, Player* player, int dir) {
 	// First, check maze's edges
 	if (dir == UP && player->y == 0) return;
@@ -17,7 +19,12 @@ void movePlayer(Grid grid, Player* player, int dir) {
 	else if (dir == LEFT) --xOut;
 	else ++xOut;
 
-	if (!isWallDestroyed(dir == UP || dir == DOWN, grid, xOut, yOut)) return;
+	switch (dir) {
+		case UP: if (!isWallDestroyed(1, grid, xOut, yOut + 1)) return; break;
+		case DOWN: if (!isWallDestroyed(1, grid, xOut, yOut)) return; break;
+		case LEFT: if (!isWallDestroyed(0, grid, xOut + 1, yOut)) return; break;
+		default: if (!isWallDestroyed(0, grid, xOut, yOut)) return; break;
+	}
 
 	player->x = xOut;
 	player->y = yOut;
@@ -35,19 +42,26 @@ void drawPlayer(sf::RenderWindow* window, Player player) {
 
 void handlePlayerInputs(Grid grid, Player* player) {
 	using namespace sf;
+	
+	int dir = LEFT;
 
-	int isKeyPressed = false;
-	int dir = NONE;
-
-	if (!isKeyPressed) {
-		if (Keyboard::isKeyPressed(Keyboard::Up)) dir = UP;
-		if (Keyboard::isKeyPressed(Keyboard::Right)) dir = RIGHT;
-		if (Keyboard::isKeyPressed(Keyboard::Down)) dir = DOWN;
-		if (Keyboard::isKeyPressed(Keyboard::Left)) dir = LEFT;
-		if (dir != NONE) {
+	if (isMoveKeyPressed()) {
+		if (!isKeyPressed) {
+			if (Keyboard::isKeyPressed(Keyboard::Up)) dir = UP;
+			else if (Keyboard::isKeyPressed(Keyboard::Right)) dir = RIGHT;
+			else if (Keyboard::isKeyPressed(Keyboard::Down)) dir = DOWN;
 			movePlayer(grid, player, dir);
-			isKeyPressed = true;
+			isKeyPressed = 1;
 		}
 	}
-	else isKeyPressed = false;	
+	else isKeyPressed = 0;
+}
+
+int isMoveKeyPressed() {
+	using namespace sf;
+
+	return (Keyboard::isKeyPressed(Keyboard::Up)) 
+		|| (Keyboard::isKeyPressed(Keyboard::Right)) 
+		|| (Keyboard::isKeyPressed(Keyboard::Down)) 
+		|| (Keyboard::isKeyPressed(Keyboard::Left));
 }

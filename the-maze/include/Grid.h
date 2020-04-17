@@ -41,5 +41,6 @@ int isCellEquals(Cell, Cell);
 
 // ---  DEBUG
 void DEBUG_displayGrid(Grid);
+void DEBUG_displayWalls(Grid);
 
 #endif
