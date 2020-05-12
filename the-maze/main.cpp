@@ -2,12 +2,16 @@
 #include "include/Maze.h"
 #include "include/Player.h"
 #include <SFML/Graphics.hpp>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
+	srand(time(NULL));
+
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 10;
-	const int lines = 10;
+	const int columns = 18;
+	const int lines = 13;
 
 	Cell cells[columns][lines];
 	Cell formerCells[columns][lines];
@@ -27,7 +31,7 @@ int main() {
 	player.x = 0;
 	player.y = 0;
 
-	createMaze(&grid);
+	createMaze(grid);
 
 	while (window.isOpen())
 	{
