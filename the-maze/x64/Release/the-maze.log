@@ -1,36 +1,26 @@
 ﻿  main.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(22): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\player.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Player' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\main.cpp(9): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
   Grid.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(67): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(22): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(88): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(87): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(108): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(103): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(124): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-  Maze.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-  Player.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(11): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\player.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Player' quand aucune variable n'est déclarée
-  Génération de code en cours
-  4 of 80 functions ( 5.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Fin de la génération du code
-  the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Release\the-maze.exe
+Grid.obj : error LNK2001: symbole externe non résolu "int __cdecl isEndCell(struct Cell)" (?isEndCell@@YAHUCell@@@Z)
+Grid.obj : error LNK2001: symbole externe non résolu "int __cdecl isStartCell(struct Cell)" (?isStartCell@@YAHUCell@@@Z)
+C:\Users\joach\Desktop\the-maze\the-maze\x64\Release\the-maze.exe : fatal error LNK1120: 2 externes non résolus

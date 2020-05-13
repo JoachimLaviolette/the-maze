@@ -7,7 +7,9 @@
 typedef struct Cell {
 	int x;
 	int y;
-	int value;
+	int isVisited;
+	int isStart;
+	int isEnd;
 };
 
 typedef struct Grid {
@@ -24,11 +26,15 @@ void initializeGrid(Grid);
 void initializeCellAt(Grid, int, int);
 Cell* getCellAt(Grid, int, int);
 void setCellVisited(Cell*, int); 
+void setCellStart(Cell*, int);
+void setCellEnd(Cell*, int);
 Cell* getFormerCellOf(Grid, Cell);
 void setFormerCellOf(Grid, Cell, Cell*);
 int getWallAt(int, Grid, int, int);
 void destroyWallAt(int, Grid, int, int);
 int isCellVisited(Cell);
+int isStartCell(Cell);
+int isEndCell(Cell);
 int isWallDestroyed(int, Grid, int, int);
 void drawGrid(sf::RenderWindow*, Grid);
 void drawGridCells(sf::RenderWindow*, Grid);

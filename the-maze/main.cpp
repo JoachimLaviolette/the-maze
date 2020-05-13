@@ -26,12 +26,19 @@ int main() {
 	grid.h_walls = (int *)h_walls;
 	grid.v_walls = (int *)v_walls;
 
+	int xStart = 0;
+	int yStart = 6;
+	int xEnd = 15;
+	int yEnd = 9;
+
 	Player player;
 	player.id = 0;
-	player.x = 0;
-	player.y = 0;
+	player.x = xStart;
+	player.y = yStart;
 
 	createMaze(grid);
+	setCellStart(getCellAt(grid, xStart, yStart), 1);
+	setCellEnd(getCellAt(grid, xEnd, yEnd), 1);
 
 	while (window.isOpen())
 	{

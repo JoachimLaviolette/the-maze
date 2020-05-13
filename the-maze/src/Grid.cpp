@@ -13,9 +13,11 @@ void initializeGrid(Grid grid) {
 }
 
 void initializeCellAt(Grid grid, int x, int y) {
-	(*(grid.cells + x * grid.lines + y)).x = x;
-	(*(grid.cells + x * grid.lines + y)).y = y;
-	(*(grid.cells + x * grid.lines + y)).value = 0;
+	getCellAt(grid, x, y)->x = x;
+	getCellAt(grid, x, y)->y = y;
+	getCellAt(grid, x, y)->isVisited = 0;
+	getCellAt(grid, x, y)->isStart = 0;
+	getCellAt(grid, x, y)->isEnd = 0;
 	(*(grid.formerCells + x * grid.lines + y)).x = -1;
 	(*(grid.formerCells + x * grid.lines + y)).y = -1;
 }
@@ -24,8 +26,16 @@ Cell* getCellAt(Grid grid, int x, int y) {
 	return grid.cells + x * grid.lines + y;
 }
 
-void setCellVisited(Cell* cell, int value) {
-	cell->value = value;
+void setCellVisited(Cell* cell, int isVisited) {
+	cell->isVisited = isVisited;
+}
+
+void setCellStart(Cell* cell, int isStart) {
+	cell->isStart = isStart;
+}
+
+void setCellEnd(Cell* cell, int isEnd) {
+	cell->isEnd = isEnd;
 }
 
 Cell* getFormerCellOf(Grid grid, Cell cell) {
@@ -45,7 +55,15 @@ void destroyWallAt(int isHorizontal, Grid grid, int x, int y) {
 }
 
 int isCellVisited(Cell cell) {
-	return cell.value == 1;
+	return cell.isVisited == 1;
+}
+
+int isStartCell(Cell cell) {
+	return cell.isStart == 1;
+}
+
+int isEndCell(Cell cell) {
+	return cell.isEnd == 1;
 }
 
 int isWallDestroyed(int isHorizontal, Grid grid, int x, int y) {
@@ -63,7 +81,14 @@ void drawGridCells(sf::RenderWindow* window, Grid grid) {
 	for (int x = 0; x < grid.columns; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
 			RectangleShape cell(Vector2f(CELL_SIZE, CELL_SIZE));
-			cell.setFillColor(isCellVisited(*getCellAt(grid, x, y)) ? Color::Yellow : Color::Red);
+
+			Color cellColor = Color::Magenta; // by default
+
+			if (isStartCell(*getCellAt(grid, x, y))) cellColor = Color::Magenta;
+			else if (isEndCell(*getCellAt(grid, x, y))) cellColor = Color::Green;
+			else if (isCellVisited(*getCellAt(grid, x, y))) cellColor = Color::Yellow;
+				
+			cell.setFillColor(cellColor);
 			cell.setPosition(Vector2f(x * CELL_SIZE, y * CELL_SIZE));
 			window->draw(cell);
 		}
@@ -140,7 +165,7 @@ int isCellEquals(Cell c0, Cell c1) {
 void DEBUG_displayGrid(Grid grid) {
 	for (int x = 0; x < grid.columns; ++x)
 		for (int y = 0; y < grid.lines; ++y)
-			std::cout << "Grid [" << x << "][" << y << "]: " << getCellAt(grid, x, y)->value << std::endl;
+			std::cout << "Grid [" << x << "][" << y << "]: " << getCellAt(grid, x, y)->isVisited << std::endl;
 }
 
 void DEBUG_displayWalls(Grid grid) {

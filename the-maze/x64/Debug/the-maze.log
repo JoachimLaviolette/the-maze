@@ -1,17 +1,17 @@
 ﻿  Grid.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(20): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(65): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(22): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(92): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(82): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(112): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(95): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(128): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
