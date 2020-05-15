@@ -18,4 +18,11 @@ const int LEFT = 3;
 const int CELL_SIZE = 50;
 const int WALL_SIZE = 1;
 
+enum OptionType {
+	PLAY,
+	LOAD,
+	QUIT,
+	NONE,
+};
+
 #endif

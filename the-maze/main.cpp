@@ -1,7 +1,5 @@
 #include "include/Constants.h"
-#include "include/Maze.h"
-#include "include/Player.h"
-#include <SFML/Graphics.hpp>
+#include "include/GameHandler.h"
 #include <stdlib.h>
 #include <time.h>
 
@@ -10,44 +8,7 @@ int main() {
 
 	sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), WINDOW_TITLE);
 
-	const int columns = 18;
-	const int lines = 13;
+	gameHandler(&window);
 
-	Cell cells[columns][lines];
-	Cell formerCells[columns][lines];
-	int h_walls[columns][lines + 1];
-	int v_walls[columns + 1][lines];
-
-	Grid grid;
-	grid.columns = columns;
-	grid.lines = lines;
-	grid.cells = (Cell *)cells;
-	grid.formerCells = (Cell *)formerCells;
-	grid.h_walls = (int *)h_walls;
-	grid.v_walls = (int *)v_walls;
-
-	int xStart = 0;
-	int yStart = 6;
-	int xEnd = 15;
-	int yEnd = 9;
-
-	Player player;
-	player.id = 0;
-	player.x = xStart;
-	player.y = yStart;
-
-	createMaze(grid);
-	setCellStart(getCellAt(grid, xStart, yStart), 1);
-	setCellEnd(getCellAt(grid, xEnd, yEnd), 1);
-
-	while (window.isOpen())
-	{
-		window.clear(sf::Color(59,59,59));
-		drawMaze(&window, grid);
-		handlePlayerInputs(grid, &player);
-		drawPlayer(&window, player);
-		window.display();
-	}
-
-	return 0;
+	return EXIT_SUCCESS;
 }

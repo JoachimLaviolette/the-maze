@@ -1,19 +1,44 @@
-﻿  Grid.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(22): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(92): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+﻿  Menu.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(61): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(112): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(65): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\grid.cpp(128): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(81): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
+          [
+              T=int
+          ]
+          and
           [
               T=float
           ]
-  the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Debug\the-maze.exe
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(83): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(85): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(82): error C2360: l'initialisation de 'rect' est ignorée par l'étiquette 'case'
+  c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(78): note: voir la déclaration de 'rect'
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(84): error C2360: l'initialisation de 'rect' est ignorée par l'étiquette 'case'
+  c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(78): note: voir la déclaration de 'rect'
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(86): error C2361: l'initialisation de 'rect' est ignorée par l'étiquette 'default'
+  c:\users\joach\desktop\the-maze\the-maze\the-maze\src\menu.cpp(78): note: voir la déclaration de 'rect'
