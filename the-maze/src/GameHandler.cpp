@@ -7,28 +7,13 @@ void gameHandler(sf::RenderWindow* window) {
 	option(window, optionChosen);
 }
 
-OptionType menu(sf::RenderWindow* window) {
-	initMenu();
-	OptionType optionChosen = OptionType::NONE;
-
-	while (optionChosen == OptionType::NONE && window->isOpen())
-	{
-		sf::Event event;
-		while (window->pollEvent(event)) if (event.type == sf::Event::Closed) window->close();
-
-		window->clear(sf::Color(0, 0, 0));
-
-		drawMenu(window);
-		optionChosen = handleMenuInputs(window);
-
-		window->display();
-	}
-
-	return optionChosen;
-}
-
 void option(sf::RenderWindow* window, OptionType optionChosen) {
-	printf("YAAAAAAAAAAAAAAAA");
-	if (optionChosen == OptionType::PLAY) game(window);
+	if (optionChosen == OptionType::PLAY) {
+		int lines = DEFAULT_MAZE_H;
+		int columns = DEFAULT_MAZE_W;
+		settingsMenu(window, &lines, &columns);
+		game(window, lines, columns);
+		gameHandler(window);
+	}
 	else if (optionChosen == OptionType::QUIT) window->close();
 }

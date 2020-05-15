@@ -5,6 +5,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-void game(sf::RenderWindow*);
+void game(sf::RenderWindow*, int, int);
+int isGameOver(Player, int, int);
 
 #endif

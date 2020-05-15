@@ -13,16 +13,19 @@ const int UP = 0;
 const int RIGHT = 1;
 const int DOWN = 2;
 const int LEFT = 3;
+const int DEFAULT_MAZE_W = 5;
+const int DEFAULT_MAZE_H = 7;
 
 // --- Grid
 const int CELL_SIZE = 50;
 const int WALL_SIZE = 1;
 
 enum OptionType {
+	NONE,
 	PLAY,
 	LOAD,
 	QUIT,
-	NONE,
+	SUBMIT,
 };
 
 #endif

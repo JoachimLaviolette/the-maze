@@ -5,7 +5,6 @@
 #define GAME_HANDLER_H
 
 void gameHandler(sf::RenderWindow*);
-OptionType menu(sf::RenderWindow*);
 void option(sf::RenderWindow*, OptionType);
 
 #endif

@@ -1,12 +1,12 @@
 #include "../include/Game.h"
 
-void game(sf::RenderWindow* window) {
+void game(sf::RenderWindow* window, int l, int c) {
 	int xStart = 0;
 	int yStart = 6;
 	int xEnd = 15;
 	int yEnd = 9;
-	int isGameOver = false;
-	
+	int gameOver = false;
+
 	Grid grid;
 	Player player;
 
@@ -25,6 +25,25 @@ void game(sf::RenderWindow* window) {
 	grid.h_walls = (int *)h_walls;
 	grid.v_walls = (int *)v_walls;
 
+	/*
+	Cell** cells = (Cell**)malloc(columns * sizeof(Cell*));
+	Cell** formerCells = (Cell**)malloc(columns * sizeof(Cell*));
+	int** h_walls = (int**)malloc(columns * sizeof(int*));
+	int** v_walls = (int**)malloc(columns + 1 * sizeof(int*));
+
+	for (int i = 0; i < columns; i++) cells[i] = (Cell*)malloc(lines * sizeof(Cell));
+	for (int i = 0; i < columns; i++) formerCells[i] = (Cell*)malloc(lines * sizeof(Cell));
+	for (int i = 0; i < columns; i++) h_walls[i] = (int*)malloc(lines + 1 * sizeof(Cell));
+	for (int i = 0; i < columns + 1; i++) v_walls[i] = (int*)malloc(lines * sizeof(Cell));
+
+	grid.columns = columns;
+	grid.lines = lines;
+	grid.cells = cells;
+	grid.formerCells = formerCells;
+	grid.h_walls = h_walls;
+	grid.v_walls = v_walls;
+	*/
+
 	createMaze(grid);
 	setCellStart(getCellAt(grid, xStart, yStart), 1);
 	setCellEnd(getCellAt(grid, xEnd, yEnd), 1);
@@ -33,7 +52,7 @@ void game(sf::RenderWindow* window) {
 	player.x = xStart;
 	player.y = yStart;
 
-	while (!isGameOver && window->isOpen())
+	while (!gameOver && window->isOpen())
 	{
 		sf::Event event;
 		while (window->pollEvent(event)) if (event.type == sf::Event::Closed) window->close();
@@ -45,5 +64,11 @@ void game(sf::RenderWindow* window) {
 		drawPlayer(window, player);
 
 		window->display();
+
+		gameOver = isGameOver(player, xEnd, yEnd);
 	}
+}
+
+int isGameOver(Player player, int xEnd, int yEnd) {
+	return  player.x == xEnd && player.y == yEnd;
 }
