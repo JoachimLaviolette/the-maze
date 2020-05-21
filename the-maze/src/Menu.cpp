@@ -65,8 +65,12 @@ void settingsMenu(sf::RenderWindow* window, int* lines, int* columns) {
 		window->display();
 	}
 
+
 	*lines = std::atoi(mazeWidthValue.toAnsiString().c_str());
 	*columns = std::atoi(mazeHeightValue.toAnsiString().c_str());
+
+	mazeWidthValue.clear();
+	mazeHeightValue.clear();
 
 	std::cout << "Maze height: " << *lines << std::endl;
 	std::cout << "Maze width: " << *columns << std::endl;

@@ -2,6 +2,7 @@
 #include "include/GameHandler.h"
 #include <stdlib.h>
 #include <time.h>
+#include "include/Grid.h"
 
 int main() {
 	srand(time(NULL));

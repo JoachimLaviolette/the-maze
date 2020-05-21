@@ -2,16 +2,16 @@
 
 void game(sf::RenderWindow* window, int l, int c) {
 	int xStart = 0;
-	int yStart = 6;
-	int xEnd = 15;
+	int yStart = 0;
+	int xEnd = 19;
 	int yEnd = 9;
 	int gameOver = false;
 
 	Grid grid;
 	Player player;
 
-	const int columns = 18;
-	const int lines = 13;
+	const int columns = 20;
+	const int lines = 10;
 
 	Cell cells[columns][lines];
 	Cell formerCells[columns][lines];

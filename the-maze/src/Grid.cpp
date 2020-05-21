@@ -71,7 +71,7 @@ int isWallDestroyed(int isHorizontal, Grid grid, int x, int y) {
 }
 
 void drawGrid(sf::RenderWindow* window, Grid grid) {
-	drawGridCells(window, grid);
+	// drawGridCells(window, grid);
 	drawGridWalls(window, grid);
 }
 
@@ -101,7 +101,8 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw vertical walls
 	for (int x = 0; x < grid.columns + 1; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
-			sf::Color wallColor = sf::Color::Red;
+			if ((x == 0 && y == 0) || (x == grid.columns && y == grid.lines - 1)) continue;
+			sf::Color wallColor = sf::Color::White;
 
 			if (!(x == 0 || x == grid.columns)) {
 				if (isWallDestroyed(0, grid, x, y)) continue;
@@ -117,7 +118,7 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw horizontal walls
 	for (int x = 0; x < grid.columns; ++x) {
 		for (int y = 0; y < grid.lines + 1; ++y) {
-			sf::Color wallColor = sf::Color::Red;
+			sf::Color wallColor = sf::Color::White;
 
 			if (!(y == 0 || y == grid.lines)) {
 				if (isWallDestroyed(1, grid, x, y)) continue;

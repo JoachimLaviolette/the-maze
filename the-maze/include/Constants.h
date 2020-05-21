@@ -18,7 +18,7 @@ const int DEFAULT_MAZE_H = 7;
 
 // --- Grid
 const int CELL_SIZE = 50;
-const int WALL_SIZE = 1;
+const int WALL_SIZE = 3;
 
 enum OptionType {
 	NONE,

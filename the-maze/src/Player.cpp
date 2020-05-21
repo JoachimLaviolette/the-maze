@@ -33,10 +33,14 @@ void movePlayer(Grid grid, Player* player, int dir) {
 void drawPlayer(sf::RenderWindow* window, Player player) {
 	using namespace sf;
 
-	CircleShape playerShape(CELL_SIZE / 3);
-	playerShape.setFillColor(Color::Blue);
-	playerShape.setOrigin(Vector2f(.5, .5));
-	playerShape.setPosition(Vector2f(player.x * CELL_SIZE + playerShape.getRadius() / 2, player.y * CELL_SIZE + playerShape.getRadius() / 2));
+	CircleShape playerShape(CELL_SIZE / 4);
+	playerShape.setFillColor(Color::Red);
+	playerShape.setPosition(
+		Vector2f(
+			player.x * (float) CELL_SIZE + (float) CELL_SIZE / 2 - playerShape.getRadius(), 
+			player.y * (float) CELL_SIZE + (float) CELL_SIZE / 2 - playerShape.getRadius()
+		)
+	);
 	window->draw(playerShape);
 }
 
