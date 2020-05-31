@@ -5,8 +5,10 @@
 #include "Constants.h"
 
 // --- Functions
-int isCursorOver(sf::RenderWindow*, sf::Text);
+int isCursorOver(sf::RenderWindow*, sf::FloatRect);
 int isNumKeyPressed();
 sf::String getStringFromKeyCode(int);
+int colorEquals(Color, Color);
+sf::Color colorToSfColor(Color);
 
 #endif

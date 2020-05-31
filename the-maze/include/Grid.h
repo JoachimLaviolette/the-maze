@@ -2,6 +2,7 @@
 #define GRID_H
 
 #include <SFML/Graphics.hpp>
+#include "Constants.h"
 
 // --- Struct
 typedef struct Cell {
@@ -36,9 +37,9 @@ int isCellVisited(Cell);
 int isStartCell(Cell);
 int isEndCell(Cell);
 int isWallDestroyed(int, Grid, int, int);
-void drawGrid(sf::RenderWindow*, Grid);
+void drawGrid(sf::RenderWindow*, Grid, GameParams);
 void drawGridCells(sf::RenderWindow*, Grid);
-void drawGridWalls(sf::RenderWindow*, Grid);
+void drawGridWalls(sf::RenderWindow*, Grid, GameParams);
 int isAllCellsVisited(Grid);
 void tryGetNeighborCell(Grid, Cell, Cell**, int);
 int isAllDirectionsTested(int[4]);

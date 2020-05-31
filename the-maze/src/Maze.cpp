@@ -6,8 +6,8 @@ void createMaze(Grid grid) {
 	buildMaze(grid);
 }
 
-void drawMaze(sf::RenderWindow* window, Grid grid) {
-	drawGrid(window, grid);
+void drawMaze(sf::RenderWindow* window, Grid grid, GameParams params) {
+	drawGrid(window, grid, params);
 }
 
 void buildMaze(Grid grid) {

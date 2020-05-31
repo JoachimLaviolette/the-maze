@@ -1,11 +1,7 @@
 #include "../include/Utils.h"
 
-int isCursorOver(sf::RenderWindow* window, sf::Text optionText) {
+int isCursorOver(sf::RenderWindow* window, sf::FloatRect rect) {
 	using namespace sf;
-
-	FloatRect rect = optionText.getGlobalBounds();
-	rect.top -= 20;
-	rect.height += 40;
 
 	return rect.contains(Mouse::getPosition(*window).x, Mouse::getPosition(*window).y);
 }
@@ -83,4 +79,14 @@ sf::String getStringFromKeyCode(int keyCode) {
 
 	default: return "";
 	}
+}
+
+int colorEquals(Color c0, Color c1) {
+	return c0.r == c1.r
+		&& c0.g == c1.g
+		&& c0.b == c1.b;
+}
+
+sf::Color colorToSfColor(Color c) {
+	return sf::Color(c.r, c.g, c.b);
 }

@@ -1,17 +1,17 @@
 #include "../include/Game.h"
 
 void game(sf::RenderWindow* window, GameParams params) {
+	const int columns = 15;
+	const int lines = 7;
+
 	int xStart = 0;
 	int yStart = 0;
-	int xEnd = 19;
-	int yEnd = 9;
+	int xEnd = columns - 1;
+	int yEnd = lines - 1;
 	int gameOver = false;
 
 	Grid grid;
 	Player player;
-
-	const int columns = 20;
-	const int lines = 10;
 
 	Cell cells[columns][lines];
 	Cell formerCells[columns][lines];
@@ -59,7 +59,7 @@ void game(sf::RenderWindow* window, GameParams params) {
 
 		window->clear(sf::Color(0, 0, 0));
 
-		drawMaze(window, grid);
+		drawMaze(window, grid, params);
 		handlePlayerInputs(grid, &player);
 		drawPlayer(window, player);
 

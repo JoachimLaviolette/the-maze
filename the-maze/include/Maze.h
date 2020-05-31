@@ -5,7 +5,7 @@
 
 // --- Functions
 void createMaze(Grid);
-void drawMaze(sf::RenderWindow*, Grid);
+void drawMaze(sf::RenderWindow*, Grid, GameParams);
 void buildMaze(Grid);
 
 #endif

@@ -1,13 +1,24 @@
-﻿  MainMenu.cpp
-  SettingsMenu.cpp
-c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(106): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+﻿  SettingsMenu.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(122): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(126): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(168): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(180): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(212): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
   Génération de code en cours
-  5 of 267 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
+  4 of 283 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Release\the-maze.exe

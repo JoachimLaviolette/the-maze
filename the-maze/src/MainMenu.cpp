@@ -50,16 +50,16 @@ void drawMainMenu(sf::RenderWindow* window) {
 	quitText.setFont(*getFont(MADE_FONT));
 
 	logoText.setFillColor(sf::Color::White);
-	playText.setFillColor(isCursorOver(window, playText) ? sf::Color(235, 183, 73) : sf::Color::White);
-	loadGameText.setFillColor(isCursorOver(window, loadGameText) ? sf::Color(60, 135, 214) : sf::Color::White);
-	settingsText.setFillColor(isCursorOver(window, settingsText) ? sf::Color(209, 46, 46) : sf::Color::White);
-	quitText.setFillColor(isCursorOver(window, quitText) ? sf::Color(153, 69, 181) : sf::Color::White);
+	playText.setFillColor(isCursorOver(window, playText.getGlobalBounds()) ? sf::Color(235, 183, 73) : sf::Color::White);
+	loadGameText.setFillColor(isCursorOver(window, loadGameText.getGlobalBounds()) ? sf::Color(60, 135, 214) : sf::Color::White);
+	settingsText.setFillColor(isCursorOver(window, settingsText.getGlobalBounds()) ? sf::Color(209, 46, 46) : sf::Color::White);
+	quitText.setFillColor(isCursorOver(window, quitText.getGlobalBounds()) ? sf::Color(153, 69, 181) : sf::Color::White);
 
 	logoText.setCharacterSize(150);
-	playText.setCharacterSize(isCursorOver(window, playText) ? 50 : 40);
-	loadGameText.setCharacterSize(isCursorOver(window, loadGameText) ? 50 : 40);
-	settingsText.setCharacterSize(isCursorOver(window, settingsText) ? 50 : 40);
-	quitText.setCharacterSize(isCursorOver(window, quitText) ? 50 : 40);
+	playText.setCharacterSize(isCursorOver(window, playText.getGlobalBounds()) ? 50 : 40);
+	loadGameText.setCharacterSize(isCursorOver(window, loadGameText.getGlobalBounds()) ? 50 : 40);
+	settingsText.setCharacterSize(isCursorOver(window, settingsText.getGlobalBounds()) ? 50 : 40);
+	quitText.setCharacterSize(isCursorOver(window, quitText.getGlobalBounds()) ? 50 : 40);
 	
 	logoText.setPosition(sf::Vector2f(
 		WINDOW_W / 2 - logoText.getLocalBounds().width / 2,
@@ -93,10 +93,10 @@ OptionType handleMainMenuInputs(sf::RenderWindow* window) {
 	using namespace sf;
 
 	if (Mouse::isButtonPressed(Mouse::Left)) {
-		if (isCursorOver(window, playText)) return OptionType::PLAY;
-		else if (isCursorOver(window, loadGameText)) return OptionType::LOAD_GAME;
-		else if (isCursorOver(window, settingsText)) return OptionType::SETTINGS;
-		else if (isCursorOver(window, quitText)) return OptionType::QUIT;
+		if (isCursorOver(window, playText.getGlobalBounds())) return OptionType::PLAY;
+		else if (isCursorOver(window, loadGameText.getGlobalBounds())) return OptionType::LOAD_GAME;
+		else if (isCursorOver(window, settingsText.getGlobalBounds())) return OptionType::SETTINGS;
+		else if (isCursorOver(window, quitText.getGlobalBounds())) return OptionType::QUIT;
 	}
 
 	return OptionType::NONE;

@@ -1,7 +1,8 @@
-#include "../include/Constants.h"
-#include "../include/Grid.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "../include/Constants.h"
+#include "../include/Grid.h"
+#include "../include/Utils.h"
 
 void initializeGrid(Grid grid) {
 	for (int x = 0; x < grid.columns; ++x) 
@@ -70,9 +71,9 @@ int isWallDestroyed(int isHorizontal, Grid grid, int x, int y) {
 	return getWallAt(isHorizontal, grid, x, y) == 0;
 }
 
-void drawGrid(sf::RenderWindow* window, Grid grid) {
+void drawGrid(sf::RenderWindow* window, Grid grid, GameParams params) {
 	// drawGridCells(window, grid);
-	drawGridWalls(window, grid);
+	drawGridWalls(window, grid, params);
 }
 
 void drawGridCells(sf::RenderWindow* window, Grid grid) {
@@ -95,14 +96,14 @@ void drawGridCells(sf::RenderWindow* window, Grid grid) {
 	}
 }
 
-void drawGridWalls(sf::RenderWindow* window, Grid grid) {
+void drawGridWalls(sf::RenderWindow* window, Grid grid, GameParams params) {
 	using namespace sf;
 
 	// Draw vertical walls
 	for (int x = 0; x < grid.columns + 1; ++x) {
 		for (int y = 0; y < grid.lines; ++y) {
 			if ((x == 0 && y == 0) || (x == grid.columns && y == grid.lines - 1)) continue;
-			sf::Color wallColor = sf::Color::White;
+			sf::Color wallColor = colorToSfColor(params.mazeColor);
 
 			if (!(x == 0 || x == grid.columns)) {
 				if (isWallDestroyed(0, grid, x, y)) continue;
@@ -118,7 +119,7 @@ void drawGridWalls(sf::RenderWindow* window, Grid grid) {
 	// Draw horizontal walls
 	for (int x = 0; x < grid.columns; ++x) {
 		for (int y = 0; y < grid.lines + 1; ++y) {
-			sf::Color wallColor = sf::Color::White;
+			sf::Color wallColor = colorToSfColor(params.mazeColor);
 
 			if (!(y == 0 || y == grid.lines)) {
 				if (isWallDestroyed(1, grid, x, y)) continue;
