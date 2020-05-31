@@ -1,7 +1,7 @@
-#include <SFML/Graphics.hpp>
-
 #ifndef GRID_H
 #define GRID_H
+
+#include <SFML/Graphics.hpp>
 
 // --- Struct
 typedef struct Cell {

@@ -1,7 +1,7 @@
-#include "Grid.h"
-
 #ifndef MAZE_H
 #define MAZE_H
+
+#include "Grid.h"
 
 // --- Functions
 void createMaze(Grid);

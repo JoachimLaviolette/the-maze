@@ -1,7 +1,14 @@
-﻿  GameHandler.cpp
+﻿  main.cpp
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(13): warning C4091: 'typedef ' : ignoré à gauche de 'Cell' quand aucune variable n'est déclarée
 c:\users\joach\desktop\the-maze\the-maze\the-maze\include\grid.h(22): warning C4091: 'typedef ' : ignoré à gauche de 'Grid' quand aucune variable n'est déclarée
-c:\users\joach\desktop\the-maze\the-maze\the-maze\include\player.h(12): warning C4091: 'typedef ' : ignoré à gauche de 'Player' quand aucune variable n'est déclarée
-  Menu.cpp
-c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\winnt.h(173): fatal error C1189: #error:  "No Target Architecture"
+c:\users\joach\desktop\the-maze\the-maze\the-maze\main.cpp(9): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  AssetManager.cpp
+  MainMenu.cpp
+  SettingsMenu.cpp
+c:\users\joach\desktop\the-maze\the-maze\the-maze\src\settingsmenu.cpp(80): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
   Génération de code en cours...
+  the-maze.vcxproj -> C:\Users\joach\Desktop\the-maze\the-maze\x64\Debug\the-maze.exe

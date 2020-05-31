@@ -82,11 +82,11 @@ void drawGridCells(sf::RenderWindow* window, Grid grid) {
 		for (int y = 0; y < grid.lines; ++y) {
 			RectangleShape cell(Vector2f(CELL_SIZE, CELL_SIZE));
 
-			Color cellColor = Color::Magenta; // by default
+			sf::Color cellColor = sf::Color::Magenta; // by default
 
-			if (isStartCell(*getCellAt(grid, x, y))) cellColor = Color::Magenta;
-			else if (isEndCell(*getCellAt(grid, x, y))) cellColor = Color::Green;
-			else if (isCellVisited(*getCellAt(grid, x, y))) cellColor = Color::Yellow;
+			if (isStartCell(*getCellAt(grid, x, y))) cellColor = sf::Color::Magenta;
+			else if (isEndCell(*getCellAt(grid, x, y))) cellColor = sf::Color::Green;
+			else if (isCellVisited(*getCellAt(grid, x, y))) cellColor = sf::Color::Yellow;
 				
 			cell.setFillColor(cellColor);
 			cell.setPosition(Vector2f(x * CELL_SIZE, y * CELL_SIZE));

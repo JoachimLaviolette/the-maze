@@ -34,7 +34,7 @@ void drawPlayer(sf::RenderWindow* window, Player player) {
 	using namespace sf;
 
 	CircleShape playerShape(CELL_SIZE / 4);
-	playerShape.setFillColor(Color::Red);
+	playerShape.setFillColor(sf::Color(224, 38, 100));
 	playerShape.setPosition(
 		Vector2f(
 			player.x * (float) CELL_SIZE + (float) CELL_SIZE / 2 - playerShape.getRadius(), 

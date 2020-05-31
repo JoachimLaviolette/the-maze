@@ -1,6 +1,6 @@
 #include "../include/Game.h"
 
-void game(sf::RenderWindow* window, int l, int c) {
+void game(sf::RenderWindow* window, GameParams params) {
 	int xStart = 0;
 	int yStart = 0;
 	int xEnd = 19;

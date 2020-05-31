@@ -140,21 +140,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameHandler.cpp" />
     <ClCompile Include="src\Grid.cpp" />
     <ClCompile Include="src\Maze.cpp" />
-    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\MainMenu.cpp" />
+    <ClCompile Include="src\SettingsMenu.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AssetManager.h" />
     <ClInclude Include="include\Constants.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameHandler.h" />
     <ClInclude Include="include\Grid.h" />
     <ClInclude Include="include\Maze.h" />
-    <ClInclude Include="include\Menu.h" />
+    <ClInclude Include="include\MainMenu.h" />
+    <ClInclude Include="include\SettingsMenu.h" />
     <ClInclude Include="include\Player.h" />
+    <ClInclude Include="include\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
